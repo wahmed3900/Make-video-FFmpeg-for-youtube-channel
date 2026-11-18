@@ -1,0 +1,15 @@
+{
+  "name": "make-video-ffmpeg-server",
+  "version": "1.0.0",
+  "description": "FFmpeg merge server for Make.com — merges ElevenLabs audio with stock video background",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
