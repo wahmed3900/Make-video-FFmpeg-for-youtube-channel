@@ -66,7 +66,7 @@ app.post('/merge', upload.single('audio'), async (req, res) => {
     }
 
     console.log(`[${id}] Merging with FFmpeg...`);
-    const cmd = `ffmpeg -stream_loop -1 -i "${videoPath}" -i "${audioPath}" -shortest -map 0:v:0 -map 1:a:0 -c:v copy -c:a aac -y "${outputPath}"`;
+    const cmd = `ffmpeg -stream_loop -1 -i "${videoPath}" -i "${audioPath}" -map 0:v:0 -map 1:a:0 -c:v libx264 -preset fast -crf 23 -c:a aac -shortest -y "${outputPath}"`;
 
     await new Promise((resolve, reject) => {
       exec(cmd, (err, stdout, stderr) => {
